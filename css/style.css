@@ -53,8 +53,14 @@ body{
   letter-spacing: 0.1rem;
   text-transform: uppercase;
   border: none;
+  font-family: 'raleway';
 }
-.button-big{}
+.button-big{
+  padding: 20px 140px;
+  font-size: 40px;
+  font-weight: bold;
+  /* margin: 50px auto; */
+}
 .button-medium{
   padding: 15px 60px;
   font-size: 30px;
@@ -135,7 +141,6 @@ nav>ul>li:first-child:hover .popup-menu{
   left: 30px;
   z-index: -1;
 }
-
 
 
                                                               /* section 1 */
@@ -449,4 +454,71 @@ article.tip p{
   margin: 0 auto;
   margin-bottom: 30px;
 }
+                                                                              /* section 4 - form */
+.section-4 h2{
+  display: block;
+  width: 370px;
+  padding-top: 60px;
+  padding-bottom: 40px;
+  text-transform: uppercase;
+  color: #555;
+  font-size: 26px;
+  line-height: 1.5em;
+}
+.section-4 .center{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+                                                              /* left side */
+.form-input{
+  width: 800px;
+  border: 1px solid #24ba9f;
+  border-radius: 1px;
+  font-size: 38px;
+  box-sizing: border-box;
+  padding: 0 20px;
+  margin-top: 25px;
+}
+.form-input::placeholder{
+  color: rgba(180, 180, 180, 0.5);
+  font-family: 'raleway';
+}
+.section-4 input{
+  height: 80px;
+}
+.section-4 textarea{
+  padding-top: 14px;
+  height: 300px;
+  resize: none;
+}
+                                                                              /* right side */
 
+.section-4__img{
+  background: url("/images/red_chair.png");
+  background-color: black;
+  width: 324px;
+  height: 260px;
+  background-size: cover;
+}
+.section-4__right{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.checkbox{
+  float: left;
+  width : 60px;
+  height: 60px;
+  background-color: white;
+  /* background-image: url("/images/form_ok.jpg");
+  background-size: cover; */
+}
+.checkbox+p{
+  font-size: 22px;
+  color: rgba(150, 150, 150, .6);
+  line-height: 1.2em;
+  margin: 20px 20px;
+  /* text-align: center; */
+}
