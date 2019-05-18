@@ -1,30 +1,23 @@
 /* fonts */
-@font-face {
-  font-family: 'ralewayblack';
-  src: url('raleway-black-webfont.woff2') format('woff2'),
-       url('raleway-black-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
 
 @font-face {
-  font-family: 'ralewaybold';
-  src: url('raleway-bold-webfont.woff2') format('woff2'),
-       url('raleway-bold-webfont.woff') format('woff');
-  font-weight: normal;
+  font-family: 'raleway-bold';
+  src: url('fonts/raleway-bold-webfont.woff2') format('woff2'),
+       url('fonts/raleway-bold-webfont.woff') format('woff');
+  font-weight: bold;
   font-style: normal;
 }
 @font-face {
-  font-family: 'ralewaylight';
-  src: url('raleway-light-webfont.woff2') format('woff2'),
-       url('raleway-light-webfont.woff') format('woff');
-  font-weight: normal;
+  font-family: 'raleway';
+  src: url('fonts/raleway-light-webfont.woff2') format('woff2'),
+       url('fonts/raleway-light-webfont.woff') format('woff');
+  font-weight: lighter;
   font-style: normal;
 }
 @font-face {
-  font-family: 'ralewayregular';
-  src: url('raleway-regular-webfont.woff2') format('woff2'),
-       url('raleway-regular-webfont.woff') format('woff');
+  font-family: 'raleway';
+  src: url('fonts/raleway-regular-webfont.woff2') format('woff2'),
+       url('fonts/raleway-regular-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -35,7 +28,7 @@
   padding: 0;
 }
 body{
-  font-family: 'ralewayregular', arial, sans-serif;
+  font-family: 'raleway', arial, sans-serif;
 }
 .center{
   width: 90%;
@@ -45,17 +38,33 @@ body{
   display: flex;
   justify-content: space-between;
 }
+
                                                            /* green-text */
 .green-text{
   color: #24ba9f;
   text-shadow: 0 0 5px #24ba9f;
   font-weight: bold;
 }
-                                                           /* button */
+                                                           /* buttons */
 .button{
   background-color:#24ba9f;
   color: white;
-  border-radius: 5%;
+  border-radius: 10px;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  border: none;
+}
+.button-big{}
+.button-medium{
+  padding: 15px 60px;
+  font-size: 30px;
+  margin: 50px auto;
+}
+.button-small{
+  padding: 10px 40px;
+  font-size: 21px;
+  margin: 50px auto;
+  letter-spacing: -.01em;
 }
 
                                                             /* -----header----- */
@@ -139,7 +148,6 @@ nav>ul>li:first-child:hover .popup-menu{
 .section-1{
   height: 742px;
   background-image: linear-gradient(#fdfdfd 50%, rgb(180, 179, 179));
-
   z-index: -2;
 }
 .section-1__photo{
@@ -161,13 +169,11 @@ nav>ul>li:first-child:hover .popup-menu{
 }
                                                         /* section-1 right */
 .section-1__text{
-  /* padding-top: 200px; */
   width: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* margin-bottom: 100px; */
   margin-left: -200px;
   margin-right: 50px;
   letter-spacing: 0.05rem;
@@ -177,7 +183,6 @@ nav>ul>li:first-child:hover .popup-menu{
   font-size: 52px;
   font-weight: 300;
   line-height: 3em;
-  
 }              
 .section-1__text h1 .green-text{
   text-shadow: none;
@@ -197,6 +202,7 @@ nav>ul>li:first-child:hover .popup-menu{
   border: none;
   border-radius: 10px;
   margin: 50px auto;
+  box-shadow: 0 100px 150px #aaaaaa; 
 }       
                                                                     /* left & right arrows */
 .slide-direction{
@@ -204,8 +210,6 @@ nav>ul>li:first-child:hover .popup-menu{
   width: 100px;
   height: 572px;
   position: relative;
-  
-  
 }
 .arrow{
   display: block;
@@ -254,7 +258,11 @@ nav>ul>li:first-child:hover .popup-menu{
   left: 55%;
 }
 
+
                                                                                  /* section 2 */
+.section-2{
+  height: 440px;
+}
 .section-2 .center{
   display: flex;
   flex-direction: row;
@@ -262,18 +270,183 @@ nav>ul>li:first-child:hover .popup-menu{
 }
 .section-2 article{
   display: block;
-  height: 274px;
-  width: 400px;
-  margin: 40px 10px;
-  background-size: contain;
+  height: 290px;
+  width: 426px;
+  margin: 40px 0;
+  background-size: cover;
+  border: 1px solid #dddddd;
 }
+                                                        /* photos */
 .photo-1{
   background: url("../images/box1_img.jpg");
+  position: relative;
 }
 .photo-2{
   background: url("../images/box2_img.jpg");
 }
-.section-2 article.tip{
-  height: 300px;
-  border: 1px solid #dddddd;
+                                                        /* h2s */
+.section-2 .h2-container{
+  display: block;
+  position: absolute;
+  height: 80px;
+  width: inherit;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin-top: 193px;
 }
+.section-2 h2{
+  font-size: 21px;
+  font-weight: 500;
+  width: max-content;
+  padding: 15px 20px;
+}
+.section-2 h2 .chair-name{
+  text-transform: uppercase;
+  font-weight: lighter;
+}
+                                                      /* underline for h2s */
+h2:after{
+  content: "";
+  display: block;
+  height: 8px;
+  background-color: #24ba9f;
+  width: 110%;
+  margin-top:3px;
+}
+                                                                                /* right side tip */
+.section-2 article.tip{
+  height: 320px;
+  border: 1px solid #dddddd;
+  position: relative;
+  box-sizing: border-box;
+  padding: 35px 30px;
+}
+article.tip .h2-container{
+  position: static;
+  margin-top: 0;
+  height: 50px;
+}
+article.tip h2{
+  padding: 0;
+}
+article.tip p{
+  font-size: 18px;
+  line-height: 1.4em;
+  color: #555;
+  margin-top:10px;
+  padding: 0;
+}
+                                                                                  /* section 3 */
+.section-3{
+  background-color: #f1f1f1;
+}       
+.section-3 h2{
+  display: block;
+  width: 370px;
+  padding-top: 60px;
+  padding-bottom: 100px;
+  text-transform: uppercase;
+  color: #555;
+  font-size: 26px;
+  line-height: 1.5em;
+}        
+                                                                        /* plan tags */                                                                  
+.plans-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 50px;
+}
+.plan{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 420px;
+  height: 600px;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+  border: 2px solid #bfbfbf;
+  border-radius: 4px;
+  position: relative;
+}
+.plan h3{
+  text-transform: uppercase;
+  color: #24ba9f;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: -70px;
+}
+.plan-price{
+  display: block;
+  box-sizing: border-box;
+  height: 170px;
+  width: 170px;
+  border: 2px solid #bfbfbf;
+  border-radius: 50%;
+  background-color: #fefefe;
+  margin: 0 auto;
+  padding-top: 40px;
+  text-align: center;
+  color: #bfbfbf;
+}
+.price{
+  font-weight: bolder;
+  font-size: 55px;
+  margin-left: 20px;
+  letter-spacing: .08rem;
+}
+.price sup{
+  font-size: 20px;
+  vertical-align: top;
+}
+.plan-price p+p{
+  font-size: 18px;
+  font-weight: bolder;
+  letter-spacing: .1em;
+}
+                                        /* circles above plan tags */
+.circle{
+  height: 70px;
+  width: 70px;
+  background-color: white;
+  border: 2px solid #bfbfbf;
+  border-radius: 50%;
+  margin: 0 auto;
+  transform: translate(0,-70%);
+  box-sizing: border-box;
+}
+.inner-circle{
+  box-sizing: border-box;
+  height: 35px;
+  width: 35px;
+  top: 100px;
+  background-color: #bfbfbf;
+  border-radius: 50%;
+  margin: 0 auto;
+  transform: translate(0 , 45%);
+}
+                                                                  /* plan list */
+.plan ul{
+  list-style: none;
+  height: 200px;
+}
+.plan ul li{
+  font-size: 30px;
+  text-align: center;
+  line-height: 1.8em;
+  letter-spacing: .08rem;
+}
+.plan ul li:nth-child(odd){
+  background-color: #e4e4e4;
+  color: #909090;
+}
+.plan ul li:nth-child(even){
+  background-color: #f1f1f1;
+  color: #7c7c7c;
+}
+.plan button{
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+

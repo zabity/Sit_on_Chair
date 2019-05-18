@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>CodersLab</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -46,7 +47,7 @@
             <div class="section-1__text">
                 <h1>Sit <span class="green-text">on</span> our <span class="green-text">chair</span></h1>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit reiciendis vitae numquam ratione voluptates culpa quas iure accusantium inventore facilis reprehenderit unde, ad officiis nisi? Illo ad vel beatae praesentium!</p>
-                <button class="button">Zobacz więcej</button>
+                <button class="button button-medium">Zobacz więcej</button>
             </div>
             <div class="slide-direction">
                 <div class="arrow arrow-right"></div>
@@ -58,19 +59,25 @@
     <section class="section-2">
         <div class="center">
             <article class="photo-1">
-                <h2>
-                    chair <span class="chair-name">clair</span>
-                </h2>
+                <div class="h2-container">
+                    <h2>
+                        Chair <span class="chair-name">clair</span>
+                    </h2>
+                </div>
             </article>
             <article class="photo-2">
-                <h2>
-                    chair <span class="chair-name">margarita</span>
-                </h2>
+                <div class="h2-container">
+                    <h2>
+                        Chair <span class="chair-name">margarita</span>
+                    </h2>
+                </div>
             </article>
             <article class="tip">
-                <h2>
-                    Finds all inputs
-                </h2>
+                <div class="h2-container">
+                    <h2>
+                        Finds all inputs
+                    </h2>
+                </div>
                 <p>
                     Finds all inputs that are not cheked and highlights the next subling span. 
                     Notice there is no change when clicking the checkboxes since no click events have been linked.
@@ -82,8 +89,82 @@
     </section>
 
 
-    <section></section>
-    <section></section>
+    <section class="section-3">
+        <div class="center">
+            <h2>Cennik</h2>
+            <div class="plans-container">
+                <div class="plan">
+                    <div class="circle">
+                        <div class="inner-circle"></div>
+                    </div>
+                    <h3>Basic plan</h3>
+                    <div class="plan-price">
+                        <p class="price">85<sup>99</sup></p>
+                        <p>PLN/MSC</p>
+                    </div>
+                    <ul>
+                        <li>Zakup towaru + dowóz</li>
+                        <li>Serwis</li>
+                    </ul>
+                    <button class="button button-small">Dołącz</button>
+                </div>
+                <div class="plan">  
+                    <div class="circle">
+                        <div class="inner-circle"></div>
+                    </div>
+                    <h3>Standard plan</h3>
+                    <div class="plan-price">
+                        <p class="price">95<sup>99</sup></p>
+                        <p>PLN/MSC</p>
+                    </div>
+                    <ul>
+                        <li>Zakup towaru + dowóz</li>
+                        <li>Serwis</li>
+                        <li>Gwarancja 5 lat</li>
+                    </ul>
+                    <button class="button button-small">Dołącz</button>
+                </div>
+                <div class="plan">
+                    <div class="circle">
+                        <div class="inner-circle"></div>
+                    </div>
+                    <h3>Advance plan</h3>
+                    <div class="plan-price">
+                        <p class="price">211<sup>00</sup></p>
+                        <p>PLN/MSC</p>
+                    </div>
+                    <ul>
+                        <li>Zakup towaru + dowóz</li>
+                        <li>Serwis</li>
+                        <li>Gwarancja 6 lat</li>
+                        <li>Porady projektanta</li>
+                    </ul>
+                    <button class="button button-small">Dołącz</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section-4">
+        <form action="#" class="center">
+            <div class="section-4__left">
+                <h2>Kontakt</h2>
+                <input type="text" name="name" placeholder="Imię">
+                <input type="email" name="email" placeholder="email">
+                <textarea name="message" placeholder="Wiadomość"></textarea>
+            </div>
+            <div class="section-4__right">
+                <div class="section-4__img"></div>
+                <label>
+                    <input type="checkbox" checked="true">
+                    <p>Zgadzam się na przetwarzanie danych osobowych</p>
+                </label>
+                <button class="button button-big">Wyślij</button>
+                
+            </div>   
+        </form>
+    </section>
 
     
     
