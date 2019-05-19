@@ -312,7 +312,7 @@ header a:hover{
   font-weight: 500;
   width: max-content;
   padding: 15px 20px;
-  transition: margin-left 1s;
+  transition: margin-left 1s, font-size 1s;
 }
 .section-2 h2 .chair-name{
   text-transform: uppercase;
@@ -615,15 +615,17 @@ footer .text-right{
 }
 
                                   /* section 2 articles */
-.section-2 article:hover{
+.section-2 article.hoverable:hover{
   cursor: pointer;
   background-size: 105% 105%;
 }
-.section-2 article:hover h2{
+.section-2 article.hoverable:hover h2{
   margin-left: 15px;
+  font-size: 25px;
 }
-.section-2 article:hover .h2-container{
+.section-2 article.hoverable:hover .h2-container{
   box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.9);
+  background-color: rgba(0,0,0,0.1);
 }
 
 
@@ -631,6 +633,9 @@ footer .text-right{
 .plan:hover{
   background-color: #24ba9f;
   border-color: #24ba9f;
+}
+.plan:hover h3{
+  color: white;
 }
 .plan:hover ul{
   border-top: none;
