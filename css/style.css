@@ -77,7 +77,6 @@ header{
   background-image: linear-gradient(#202030 5%,black 10%, black);
   width: 100%;
   position: relative;
-
   color: #ffffff;
   text-transform: uppercase;
   font-size: 20px;
@@ -99,7 +98,6 @@ header li a{
   color: #ffffff;
 }
 .logo{
-  /* padding:19px; */
   margin-top: 23px;
   margin-left: -3px;
   text-shadow: 0 0 5px white;
@@ -107,7 +105,16 @@ header li a{
                                                         /* dropdown submenu */
 nav>ul>li:first-child:hover .popup-menu{
   display: block;
-  transition: line-height 0.4s ease-in;
+}
+                /* ghost-div holder for dropdown */
+nav>ul>li:first-child:hover:after{
+  content: '';
+  display: block;
+  position:absolute;
+  height: 100px;
+  width: 100px;
+  opacity: 0;
+  z-index: 1;
 }
 .popup-menu{
   background-color: black;
@@ -116,18 +123,20 @@ nav>ul>li:first-child:hover .popup-menu{
   padding: 10px;
   margin-top: 25px;
   font-size: 15px;
-  transform: translate(-10px);
-  transform: rotate(-1deg);
+  transform: rotate(-1deg) translate(0, 10px);
   line-height: 30px;
   font-size:16px;
   box-shadow: 0 -10px 10px black;
   border-radius: 3%;
-
   display: none;
+  z-index: 11;
 }
 .popup-menu ul{
   list-style: none;
-  text-shadow: -2px 0 -10px black;
+  text-shadow: -2px 0 -10px black; 
+}
+header a:hover{
+  color: #24ba9f;
 }
 .popup-menu ul:before{
   content: "";
@@ -139,16 +148,16 @@ nav>ul>li:first-child:hover .popup-menu{
   top: -10px;
   left: 30px;
   z-index: -1;
+  box-shadow: -10px -10px 20px black;
 }
 
-
-                                                              /* section 1 */
                                 /* small gradient transition */
 .gradient-blur{
   height: 30px;
   background-image: linear-gradient(black 20%,white 30%, #fdfdfd);
 }
 
+                                                              /* section 1 */
 .section-1{
   height: 742px;
   background-image: linear-gradient(#fdfdfd 50%, rgb(180, 179, 179));
@@ -163,13 +172,11 @@ nav>ul>li:first-child:hover .popup-menu{
   background-size: contain;
   background-repeat: no-repeat;
 }
-
 .section-1 .center{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  
 }
                                                         /* section-1 right */
 .section-1__text{
@@ -210,7 +217,7 @@ nav>ul>li:first-child:hover .popup-menu{
 }       
                                                                     /* left & right arrows */
 .slide-direction{
-  /* background-color: grey; */
+  background-color: rgba(255, 255, 255, 0);
   width: 100px;
   height: 572px;
   position: relative;
@@ -230,12 +237,14 @@ nav>ul>li:first-child:hover .popup-menu{
   top: 40%;
   transform: rotate(135deg) translate(-50%);
   background-image: linear-gradient(-45deg, white 70%,#eeeeff 85%, #eeeeee 90%, #2bc9ac);
+  transition: transform 1s;
 }
 .arrow-right{
   position: absolute;
   top: 40%;
   transform: rotate(-45deg) translate(50%);
   background-image: linear-gradient(-45deg, white 70%,#eeeeff 85%, #eeeeee 90%, #2bc9ac);
+  transition: transform 1s;
 }
 .arrow-right:after{
   content: '';
@@ -277,13 +286,13 @@ nav>ul>li:first-child:hover .popup-menu{
   height: 290px;
   width: 426px;
   margin: 40px 0;
-  background-size: cover;
+  background-size: 100% 100%;
   border: 1px solid #dddddd;
+  transition: background-size 1s;
 }
                                                         /* photos */
 .photo-1{
   background: url("../images/box1_img.jpg");
-  position: relative;
 }
 .photo-2{
   background: url("../images/box2_img.jpg");
@@ -296,12 +305,14 @@ nav>ul>li:first-child:hover .popup-menu{
   width: inherit;
   background-color: rgba(255, 255, 255, 0.3);
   margin-top: 193px;
+  transition: box-shadow 2s;
 }
 .section-2 h2{
   font-size: 21px;
   font-weight: 500;
   width: max-content;
   padding: 15px 20px;
+  transition: margin-left 1s;
 }
 .section-2 h2 .chair-name{
   text-transform: uppercase;
@@ -495,7 +506,7 @@ article.tip p{
                                                                               /* right side */
 
 .section-4__img{
-  background: url("/images/red_chair.png");
+  background: url("../images/red_chair.png");
   width: 324px;
   height: 260px;
   background-size: cover;
@@ -506,24 +517,15 @@ article.tip p{
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  /* margin-right: 0px; */
 }
 .checkbox{
-  float: left;
-  width : 60px;
-  height: 60px;
-  background-color: white;
-  margin: 20px 20px 20px 0;
-  /* background-image: url("/images/form_ok.jpg");
-  background-size: cover; */
+  display: none;
 }
 .checkbox+p{
-  /* display: block; */
   font-size: 25px;
   color: rgba(150, 150, 150, .6);
   line-height: 1.2em;
   margin-top: 30px;
-  
 }
                                                                                     /* footer */
 
@@ -543,6 +545,7 @@ footer{
   display: block;
   width: 45px;
   height: 45px;
+  border-radius: 50%;
   background-size: cover;
   float:left;
 } 
@@ -577,10 +580,54 @@ footer .text-right{
 
 
 
-                                                                    /* hover effects */
+                                                                    /* effects */
+  
+                                  /* buttons */
+.button:hover{
+  font-weight: bold;
+  box-shadow: 0 0 20px #ccc;
+  cursor: pointer;
+}
+.button-small:hover{
+  font-weight: bold;
+  box-shadow: 0 0 20px #e5e5e5;
+}
+.button:focus{
+  outline: none;
+}
+.button:active{
+  box-shadow: inset 0 0 5px 3px #148b76;
+}
+
+                                /* section 1 slider arrows */
+.slide-direction:hover{
+  cursor: pointer;
+}
+.slide-direction:hover .arrow-left{
+  box-shadow: 5px 5px 15px 3px rgba(0, 200, 200, .6);
+  border-width: 0;
+  transform: rotateZ(495deg) translate(-55%);
+}
+.slide-direction:hover .arrow-right{
+  box-shadow: 5px 5px 15px 3px rgba(0, 200, 200, .6);
+  border-width: 0;
+  transform: rotateZ(-405deg) translate(55%);
+}
+
+                                  /* section 2 articles */
+.section-2 article:hover{
+  cursor: pointer;
+  background-size: 105% 105%;
+}
+.section-2 article:hover h2{
+  margin-left: 15px;
+}
+.section-2 article:hover .h2-container{
+  box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.9);
+}
 
 
-/* price tags */
+                                /* section 3 price tags */
 .plan:hover{
   background-color: #24ba9f;
   border-color: #24ba9f;
@@ -610,20 +657,45 @@ footer .text-right{
   color: #999;
 }
 
-/* icons in footer */
+                                  /* section 4 form inputs */
+.form-input:focus{
+  outline: none;
+  color: #666;
+  border-width: 2px;
+}
+
+                                  /* section 4 checkbox */
+.checkbox +p:before{
+  content: '';
+  box-sizing: border-box;
+  height: 60px;
+  width: 60px;
+  display: block;
+  float:left;
+  margin: 0 10px 0 0;
+  border: 1px solid #24ba9f;
+}
+.checkbox:checked +p:before{
+  content: '';
+  background-image: url("../images/form_ok.jpg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  height: 60px;
+  width: 60px;
+  display: block;
+  float:left;
+  margin: 0 10px 0 0;
+  border: 1px solid #24ba9f;
+}
+.checkbox+p:hover{
+  cursor:pointer;
+}
+
+                                /* icons in footer */
 .icon:hover{
   width: 50px;
   height: 50px;
+  cursor: pointer;
 }
-
-/********************TODO********************/
-/*
-hovery:
-  dropdown
-  buttony +active itp
-  forma +active
-  checkbox
-  artykuły clair i margarita (?)
-
-
-*/
