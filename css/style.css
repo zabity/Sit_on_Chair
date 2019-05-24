@@ -580,16 +580,16 @@ footer{
   float:left;
 } 
 .icon-1{
-  background-image: url("/images/flickr.png");
+  background-image: url("../images/flickr.png");
 }                       
 .icon-2{
-  background-image: url("/images/vimeo.png");
+  background-image: url("../images/vimeo.png");
 }                       
 .icon-3{
-  background-image: url("/images/pinterest.png");
+  background-image: url("../images/pinterest.png");
 }                       
 .icon-4{
-  background-image: url("/images/twitter.png");
+  background-image: url("../images/twitter.png");
 }     
                                                               /* footer text */
 footer .text-left{
