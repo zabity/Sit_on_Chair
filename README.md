@@ -8,4 +8,6 @@ Main purpose of this workshop is to practice HTML and CSS skills.<br>
 There is no javascript, everything is styled in CSS.
 <br>
 <br>
+Here is the page's preview: https://zabity.github.io/Sit_on_Chair/
+<br>
 Ps. Make love :)
